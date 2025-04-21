@@ -2,6 +2,7 @@
 .python-version
 main.py
 pyproject.toml
+uv.lock
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
