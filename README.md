@@ -63,25 +63,33 @@ The main goal was to apply exploratory data analysis (EDA) techniques and build 
 
 🧪 Technologies Used & Dependencies
 
-
-
+<img width="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/python.png">&nbsp;
+<img width="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/pandas.png">&nbsp;
+<img width="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/numpy.png">&nbsp;
+<img width="50" src="ttps://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/git.png">&nbsp;
+<img width="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/visual_studio_code.png">&nbsp;
+<img width="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/jupyter_notebook.png">&nbsp;
+<img width="50" src="">&nbsp;
+<img width="50" src="">&nbsp;
+<img width="50" src="">&nbsp;
+<img width="50" src="">&nbsp;
 ---
 
 ## ⚙️ Installation and Usage
 
 1️⃣ Clone the repository
 ```bash
-git clone [https://github.com/your-username/Car-Prices-Project.git](https://github.com/your-username/Car-Prices-Project.git)
-cd Car-Prices-Project
+git clone [https://github.com/Nho89/Car_prices_project_equipo2.git](https://github.com/Nho89/Car_prices_project_equipo2.git)
+cd Car_prices_project_equipo2
 
 2️⃣ Create and activate the virtual environment
 ```bash
 python -m venv .venv
 source .venv/bin/activate   # On Linux/MacOS
 .venv\Scripts\activate     # On Windows
+```
 
-
-3️⃣ Install dependenci```bash
+### 3️⃣ Install dependencies
 
 ```bash
 pip install -r requirements.txt
