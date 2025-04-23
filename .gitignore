@@ -1,4 +1,8 @@
 .venv
+pyproject.toml
+uv.lock
+main.py
+.python-version
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
