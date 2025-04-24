@@ -19,9 +19,9 @@ def load_data():
 
 df = load_data()
 
-# Importar el modelo entrenado
-model = joblib.load("models/linear_regression_model.pkl")  # comprobar modelo y ruta
-
+# Importar el modelo entrenado y el pipeline
+# model = joblib.load("models/linear_regression_model.pkl")  # comprobar modelo y ruta
+# pipeline = joblib.load("models/pipeline.pkl")  # comprobar pipeline y ruta
 
 st.sidebar.header("Ingrese las características del coche")
 
@@ -41,6 +41,6 @@ if st.sidebar.button("Predecir precio"):
 
     
     predicted_price = model.predict(input_data)[0]
-
+    st.success(f"El precio estimado del coche es: ${predicted_price:,.2f}") ## redondea el resultado
     
     st.success(f"El precio estimado del coche es: ${predicted_price:,.2f}")
