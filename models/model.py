@@ -46,7 +46,7 @@ except ImportError:
 
 
 # Variables predictoras y objetivo
-features = ['model_year', 'milage', 'engine', 'transmission_num','accident']
+features = ['model_year', 'milage',]# 'engine','transmission_num','accident']
 X = df[features]
 y = df['price']
 
@@ -100,7 +100,9 @@ for name, model in models.items():
         'R2 Test': r2_test,
         'RMSE Test': rmse_test,
         'MAE Test': mae_test,
-        'Overfitting': overfitting
+        'Overfitting': overfitting,
+        'Overfitting %': 100 * (r2_train - r2_test) / abs(r2_train) if r2_train != 0 else None,
+
     })
 
 # Mostrar resultados ordenados
