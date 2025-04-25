@@ -3,6 +3,8 @@
 main.py
 pyproject.toml
 uv.lock
+informe_proyecto.pdf
+informe.ipynb
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
