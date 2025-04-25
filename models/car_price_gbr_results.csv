@@ -1,0 +1,2 @@
+Model,R2 Train,RMSE Train,MAE Train,R2 Test,RMSE Test,MAE Test,Overfitting,Overfitting %
+Gradient Boosting Regressor,0.42,29730.61,13701.37,0.4,30064.13,13918.19,False,4.87
