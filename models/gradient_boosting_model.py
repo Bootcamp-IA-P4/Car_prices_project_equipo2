@@ -20,7 +20,9 @@ df = df.dropna()
 
 # Preprocesado de las variables categóricas
 if 'brand' in df.columns and 'model' in df.columns:
+    all_labels = pd.concat([df['brand'], df['model']]).unique()
     label_encoder = LabelEncoder()
+    label_encoder.fit(all_labels)
     df['brand'] = label_encoder.fit_transform(df['brand'])
     df['model'] = label_encoder.fit_transform(df['model'])
     joblib.dump(label_encoder, "../models/label_encoder.pkl")
@@ -91,8 +93,8 @@ print(f"MAE Train: {mae_train:.2f}, MAE Test: {mae_test:.2f}")
 print(f"Overfitting: {overfitting_percentage:.2f}%")
 print(f"Overfitting detected: {overfitting_percentage:.2f}%" if overfitting else "No overfitting detected")
 
-# Guardar el mejor modelo
-# joblib.dump(gradient_boosting, "../models/gradient_boosting_model.pkl")
+# Guardar el modelo
+joblib.dump(gradient_boosting, "../models/car_price_gbr_model.pkl")
 
 
 # Fitting 5 folds for each of 20 candidates, totalling 100 fits

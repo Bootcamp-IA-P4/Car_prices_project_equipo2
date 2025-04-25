@@ -25,13 +25,11 @@ df = df.dropna()
 
 # Preprocesado de las variables categóricas
 if 'brand' in df.columns and 'model' in df.columns:
-    # Verificar si las columnas 'brand' y 'model' existen
-    print('Preprocesando la variables categóricas...')
-    # Codificar la columna 'brand' con LabelEncoder
+    all_labels = pd.concat([df['brand'], df['model']]).unique()
     label_encoder = LabelEncoder()
+    label_encoder.fit(all_labels)
     df['brand'] = label_encoder.fit_transform(df['brand'])
     df['model'] = label_encoder.fit_transform(df['model'])
-    # Guardar el LabelEncoder para usarlo en predicciones futuras
     joblib.dump(label_encoder, "../models/label_encoder.pkl")
     print("LabelEncoder guardado en '../models/label_encoder.pkl'.")
 
