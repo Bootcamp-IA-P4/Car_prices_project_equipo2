@@ -1,6 +1,6 @@
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error, r2_score, mean_absolute_error
-from sklearn.linear_model import LinearRegression
+from sklearn.linear_model import LinearRegression,  Ridge, Lasso, LassoCV
 from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor
 from sklearn.neighbors import KNeighborsRegressor
 import numpy as np
@@ -46,7 +46,7 @@ except ImportError:
 
 
 # Variables predictoras y objetivo
-features = ['model_year', 'milage',]# 'engine','transmission_num','accident']
+features = ['model_year', 'milage', 'engine_hp','accident','transmission_num','engine_cylinder',]
 X = df[features]
 y = df['price']
 
@@ -55,14 +55,35 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 
 # Lista de modelos 
 models = {
-    "Linear Regression": LinearRegression(),
-    "Random Forest": RandomForestRegressor(random_state=42),
-    "Gradient Boosting": GradientBoostingRegressor(random_state=42),
-    "K-Nearest Neighbors": KNeighborsRegressor()
+    # "Linear Regression": LinearRegression(),
+    
+    "Gradient Boosting":GradientBoostingRegressor(
+    n_estimators=1000,         # Aumentar si learning_rate es bajo
+    learning_rate=0.02,       # Más bajo = más robusto
+    max_depth=3,              # Controla complejidad. Prueba 3–5
+    min_samples_split=5,      # Evita divisiones pequeñas
+    min_samples_leaf=5,       # Evita hojas con pocos datos
+    subsample=0.8,            # Usa solo parte del dataset por árbol
+    max_features='sqrt',      # Menos features = menos varianza
+    random_state=42
+),
+
+    # "K-Nearest Neighbors": KNeighborsRegressor(),
+    # "Ridge Regression": Ridge(random_state=42),
+    # "Lasso Regression": Lasso(random_state=42),  
+    # "LassoCV": LassoCV(cv=5, random_state=42),
+    # "XGBoost": XGBRegressor(random_state=42),
+    # "Random Forest": RandomForestRegressor(
+    # n_estimators=100,         # Reduce o aumenta según el tamaño del dataset
+    # max_depth=20,             # Controla la profundidad máxima de los árboles
+    # min_samples_split=5,      # Aumenta para evitar divisiones con muy pocos datos
+    # min_samples_leaf=2,       # Aumenta para reducir overfitting
+    # max_features='sqrt',      # Usa sqrt o log2 para limitar el nº de features por árbol
+    # random_state=42
+    # )
 }
 
-if xgb_available:
-    models["XGBoost"] = XGBRegressor(random_state=42)
+
 
 # Evaluación de modelos con detección de overfitting
 results = []
