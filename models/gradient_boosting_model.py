@@ -49,9 +49,9 @@ base_model = GradientBoostingRegressor(random_state=42)
 search = RandomizedSearchCV(
     estimator=base_model,
     param_distributions=param_grid,
-    n_iter=20,
+    n_iter=25,
     scoring='r2',
-    cv=5,
+    cv=7,
     n_jobs=-1,
     random_state=42,
     verbose=1
@@ -104,3 +104,13 @@ print(f"Overfitting detected: {overfitting_percentage:.2f}%" if overfitting else
 # MAE Train: 13184.65, MAE Test: 13771.40
 # Overfitting: 13.51%
 # Overfitting detected: 13.51%
+
+# Fitting 7 folds for each of 25 candidates, totalling 175 fits
+# Mejores hiperparámetros encontrados:
+# {'subsample': 1.0, 'n_estimators': 1000, 'min_samples_split': 10, 'min_samples_leaf': 5, 'max_features': 'sqrt', 'max_depth': 5, 'learning_rate': 0.02}
+# Gradient Boosting Regressor (Optimizado)
+# R2 Train: 0.4414, R2 Test: 0.4015        
+# RMSE Train: 29119.83, RMSE Test: 29961.84
+# MAE Train: 13382.27, MAE Test: 13778.69  
+# Overfitting: 9.05%
+# No overfitting detected
