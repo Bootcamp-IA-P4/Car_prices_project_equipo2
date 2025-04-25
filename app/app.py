@@ -14,7 +14,7 @@ model = joblib.load("models/car_price_gbr_model.pkl")  # comprobar modelo y ruta
 brand_encoder = joblib.load("models/brand_encoder.pkl")
 model_encoder = joblib.load("models/model_encoder.pkl")
 
-st.image("https://res.cloudinary.com/artevivo/image/upload/v1745616496/car-4393990_1280_xyw6ji.jpg", caption="Predicción de precios de coches")
+st.image("https://res.cloudinary.com/artevivo/image/upload/v1745619799/Captura_de_pantalla_2025-04-26_002225_xrhlvd.png", caption="Predicción de precios de coches")
 st.title("🚗 Predicción de Precios de Coches usados")
 
 st.markdown("""
