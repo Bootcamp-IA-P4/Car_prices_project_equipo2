@@ -19,13 +19,13 @@ df = pd.read_csv(clean_data_car_csv_path)
 df = df.dropna()
 
 # Preprocesado de las variables categóricas
-if 'brand' in df.columns and 'model' in df.columns:
-    all_labels = pd.concat([df['brand'], df['model']]).unique()
-    label_encoder = LabelEncoder()
-    label_encoder.fit(all_labels)
-    df['brand'] = label_encoder.fit_transform(df['brand'])
-    df['model'] = label_encoder.fit_transform(df['model'])
-    joblib.dump(label_encoder, "../models/label_encoder.pkl")
+brand_encoder = LabelEncoder()
+model_encoder = LabelEncoder()
+
+df['brand'] = brand_encoder.fit_transform(df['brand'])
+df['model'] = model_encoder.fit_transform(df['model'])
+joblib.dump(brand_encoder, "../models/brand_encoder.pkl")
+joblib.dump(model_encoder, "../models/model_encoder.pkl")
 
 # Seleccionar características y objetivo
 features = ['brand','model', 'model_year', 'milage', 'engine_hp','engine_cylinder','transmission_num','accident']
