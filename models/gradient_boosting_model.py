@@ -93,3 +93,14 @@ print(f"Overfitting detected: {overfitting_percentage:.2f}%" if overfitting else
 
 # Guardar el mejor modelo
 # joblib.dump(gradient_boosting, "../models/gradient_boosting_model.pkl")
+
+
+# Fitting 5 folds for each of 20 candidates, totalling 100 fits
+# Mejores hiperparámetros encontrados:
+# {'subsample': 0.8, 'n_estimators': 1500, 'min_samples_split': 10, 'min_samples_leaf': 5, 'max_features': 'log2', 'max_depth': 5, 'learning_rate': 0.02}
+# Gradient Boosting Regressor (Optimizado)
+# R2 Train: 0.4631, R2 Test: 0.4005
+# RMSE Train: 28549.57, RMSE Test: 29985.96
+# MAE Train: 13184.65, MAE Test: 13771.40
+# Overfitting: 13.51%
+# Overfitting detected: 13.51%
