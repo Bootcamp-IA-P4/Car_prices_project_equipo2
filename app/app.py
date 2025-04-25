@@ -11,9 +11,10 @@ with open(json_path, 'r', encoding='utf-8') as json_file:
     brand_model_mapping = json.load(json_file)
 ##Importar el modelo entrenado y el label encoder
 model = joblib.load("models/car_price_gbr_model.pkl")  # comprobar modelo y ruta
-label_encoder = joblib.load("models/label_encoder.pkl")
+brand_encoder = joblib.load("models/brand_encoder.pkl")
+model_encoder = joblib.load("models/model_encoder.pkl")
 
-
+st.image("https://res.cloudinary.com/artevivo/image/upload/v1745616496/car-4393990_1280_xyw6ji.jpg", caption="Predicción de precios de coches")
 st.title("🚗 Predicción de Precios de Coches usados")
 
 st.markdown("""
@@ -35,8 +36,8 @@ accident = st.sidebar.selectbox("El coche ha sufrido algún accidente?", options
 engine_hp = st.sidebar.number_input("Caballos de fuerza del motor", min_value=0, max_value=1000, value=150, step=10)
 
 if st.sidebar.button("Predecir precio"):
-    enconded_brand = label_encoder.transform([brand])[0] 
-    enconded_model_car = label_encoder.transform([model_car])[0] 
+    enconded_brand = brand_encoder.transform([brand])[0] 
+    enconded_model_car = model_encoder.transform([model_car])[0] 
     input_data = pd.DataFrame({
         "brand": [enconded_brand],
         "model": [enconded_model_car],  
@@ -49,9 +50,5 @@ if st.sidebar.button("Predecir precio"):
         })
    
     predicted_price = model.predict(input_data)[0]
-    st.success(f"El precio estimado del coche es: ${predicted_price:,.2f}") ## redondea el resultado
-
-# if st.sidebar.button("Reiniciar"):
-#     st.experimental_rerun()      
-# Verificar las clases del LabelEncoder
-st.write("Clases del LabelEncoder:", label_encoder.classes_)
+    st.success(f"El precio estimado del coche es: ${predicted_price:,.2f}") 
+     
