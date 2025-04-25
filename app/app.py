@@ -10,7 +10,7 @@ json_path = "app/brand_model_mapping.json"
 with open(json_path, 'r', encoding='utf-8') as json_file:
     brand_model_mapping = json.load(json_file)
 ##Importar el modelo entrenado y el label encoder
-model = joblib.load("models/gradient_boosting_model.pkl")  # comprobar modelo y ruta
+model = joblib.load("models/car_price_gbr_model.pkl")  # comprobar modelo y ruta
 label_encoder = joblib.load("models/label_encoder.pkl")
 
 
@@ -42,9 +42,10 @@ if st.sidebar.button("Predecir precio"):
         "model": [enconded_model_car],  
         "model_year": [model_year],
         "milage": [milage],
+        "engine_hp": [0],
+        "engine_cylinder": [engine_hp],
         "transmission_num": [transmission_num],
         "accident": [accident],
-        "engine_hp": [0],
         })
    
     predicted_price = model.predict(input_data)[0]
@@ -52,3 +53,5 @@ if st.sidebar.button("Predecir precio"):
 
 # if st.sidebar.button("Reiniciar"):
 #     st.experimental_rerun()      
+# Verificar las clases del LabelEncoder
+st.write("Clases del LabelEncoder:", label_encoder.classes_)
