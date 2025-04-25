@@ -3,9 +3,12 @@ from sklearn.metrics import mean_squared_error, r2_score, mean_absolute_error
 from sklearn.linear_model import LinearRegression,  Ridge, Lasso, LassoCV
 from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor
 from sklearn.neighbors import KNeighborsRegressor
+from sklearn.preprocessing import LabelEncoder
+import joblib
 import numpy as np
 import pandas as pd
 import os
+# from pipeline import create_pipeline
 
 # Setting paths
 current_dir = os.getcwd()  # Use os.getcwd() to get the current working directory
@@ -20,21 +23,18 @@ test_csv_path = os.path.join(data_dir, "test_csv.csv")
 df = pd.read_csv(clean_data_car_csv_path)
 df = df.dropna()
 
+# ##  dividir datos en conjuntos de entrenamiento y prueba.
+# def split_data(df, features, target, test_size=0.2, random_state=42):
+#     X_train, X_test, y_train, y_test = train_test_split(
+#         df[features],
+#         df[target],
+#         test_size=test_size,
+#         random_state=random_state
+#     )
+#     return X_train, X_test, y_train, y_test
 
-##  dividir datos en conjuntos de entrenamiento y prueba.
-def split_data(df, features, target, test_size=0.2, random_state=42):
-    X_train, X_test, y_train, y_test = train_test_split(
-        df[features],
-        df[target],
-        test_size=test_size,
-        random_state=random_state
-    )
-    return X_train, X_test, y_train, y_test
-
-
-
-# Valoración del modelo y detección de overfitting
-# Asegúrate de que tienes instaladas las librerías necesarias
+# # Valoración del modelo y detección de overfitting
+# # Asegúrate de que tienes instaladas las librerías necesarias
 
 # Si tienes XGBoost instalado:
 try:
@@ -43,15 +43,52 @@ try:
 except ImportError:
     xgb_available = False
 
+# Preprocesado de la variable brand
+if 'brand' in df.columns:
+    print('Preprocesando la variable brand...')
+    
+    # Codificar la columna 'brand' con LabelEncoder
+    label_encoder = LabelEncoder()
+    df['brand'] = label_encoder.fit_transform(df['brand'])
+
+    # Guardar el LabelEncoder para usarlo en predicciones futuras
+    joblib.dump(label_encoder, "../models/label_encoder.pkl")
+    print("LabelEncoder guardado en '../models/label_encoder.pkl'.")
+
+    # Seleccionar características y objetivo
+    features = ['brand', 'model_year', 'milage', 'engine_hp','accident','transmission_num','engine_cylinder',]
+    X = df[features]
+    y = df['price']
+
+    # Dividir los datos en entrenamiento y prueba
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+    # Agregar la columna 'price' a los conjuntos de datos antes de guardarlos
+    X_train['price'] = y_train
+    X_test['price'] = y_test
+
+    # Guardar los conjuntos de datos en archivos CSV
+    X_train.to_csv(train_csv_path, index=False)
+    X_test.to_csv(test_csv_path, index=False)
+    print(f"Datos preprocesados guardados en {train_csv_path} y {test_csv_path}.")
+else:
+    print("La columna 'brand' no está presente en el dataset. Verifica el archivo 'clean_data_car.csv'.")
 
 
 # Variables predictoras y objetivo
-features = ['model_year', 'milage', 'engine_hp','accident','transmission_num','engine_cylinder',]
-X = df[features]
-y = df['price']
+features = ['brand', 'model_year', 'milage', 'transmission_num']
+X_train = pd.read_csv(train_csv_path)
+X_test = pd.read_csv(test_csv_path)
 
-# División del dataset 
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+# Separar la variable objetivo
+y_train = X_train.pop('price')
+y_test = X_test.pop('price')
+
+print("Primeras filas de X_train:")
+print(X_train.head())
+
+print("Primeras filas de X_test:")
+print(X_test.head())
 
 # Lista de modelos 
 models = {
@@ -130,3 +167,5 @@ for name, model in models.items():
 results_df = pd.DataFrame(results).sort_values(by='R2 Test', ascending=False)
 print("\n Comparación de modelos con detección de Overfitting:\n")
 print(results_df)
+
+
