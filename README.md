@@ -1,4 +1,6 @@
-![img_car](<img/car_img.png>)
+<div align="center">
+  <img src="https://res.cloudinary.com/artevivo/image/upload/v1745610575/Dise%C3%B1o_sin_t%C3%ADtulo_2_lexktp.jpg" alt="Banner centrado" width="900" height="450">
+</div>
 
 ##  📌 Index
 -  [About the Project](#-about-the-project)  
@@ -20,6 +22,9 @@
 
 The main goal was to apply exploratory data analysis (EDA) techniques and build a prediction model that can be consulted through an interactive interface built with Streamlit.
 
+</div>
+<div align="center">
+  <img src="https://res.cloudinary.com/artevivo/image/upload/v1745610575/Busca_el_ideal_para_ti_cjqst6.jpg" alt="Banner centrado" width="250" height="400">
 </div>
 
 ---
