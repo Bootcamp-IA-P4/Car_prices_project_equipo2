@@ -101,11 +101,11 @@ results_df = pd.DataFrame(results).sort_values(by='R2 Test', ascending=False)
 print("\n Métricas del modelo Gradient Boosting Regressor:\n")
 print(results_df)
 # Guardar los resultados en un CSV
-results_df.to_csv("../models/gradient_boosting_results.csv", index=False)
-print("Resultados guardados en '../models/gradient_boosting_results.csv'.\n")
+results_df.to_csv("../models/car_price_gbr_results.csv", index=False)
+print("Resultados guardados en '../models/car_price_gbr_results.csv'.\n")
 
 # Guardar el mejor modelo
 print("Procesando el modelo...\n")
-joblib.dump(model, "../models/gradient_boosting_model.pkl")
-print("Modelo guardado en '../models/gradient_boosting_model.pkl'.")
+joblib.dump(model, "../models/car_price_gbr_model.pkl")
+print("Modelo guardado en '../models/car_price_gbr_model.pkl'.")
 
