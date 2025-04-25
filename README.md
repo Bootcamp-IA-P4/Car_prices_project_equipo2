@@ -6,7 +6,7 @@
 -  [Current Issues](#-current-issues)
 -  [Folder Structure](#-folder-structure)
 -  [Possible Improvements](#-possible-improvements)   
--  [Technologies Used & Dependencies](#-technologies-used--dependencies)   
+-  [Eda Architecture Diagram](#-Eda-Architecture-Diagram)   
 -  [Installation and Usage](#-installation-and-usage)   
 -  [Collaborators](#-collaborators)   
 
@@ -60,29 +60,22 @@ The main goal was to apply exploratory data analysis (EDA) techniques and build 
 ├── 📜 .gitignore  
 ├── 📜 requirements.txt  
 ├── 📜 README.md  
-
-🧪 Technologies Used & Dependencies
-
-<img width="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/python.png">&nbsp;
-<img width="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/pandas.png">&nbsp;
-<img width="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/numpy.png">&nbsp;
-<img width="50" src="ttps://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/git.png">&nbsp;
-<img width="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/visual_studio_code.png">&nbsp;
-<img width="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/jupyter_notebook.png">&nbsp;
-<img width="50" src="">&nbsp;
-<img width="50" src="">&nbsp;
-<img width="50" src="">&nbsp;
-<img width="50" src="">&nbsp;
+```
 ---
+
+## Eda Architecture Diagram
+
+![screenshot-1745574334085](https://github.com/user-attachments/assets/1e4f7f4c-4836-4952-b8e0-34653a8b3e4c)
 
 ## ⚙️ Installation and Usage
 
-1️⃣ Clone the repository
+### 1️⃣ Clone the repository
 ```bash
 git clone [https://github.com/Nho89/Car_prices_project_equipo2.git](https://github.com/Nho89/Car_prices_project_equipo2.git)
 cd Car_prices_project_equipo2
+```
 
-2️⃣ Create and activate the virtual environment
+### 2️⃣ Create and activate the virtual environment
 ```bash
 python -m venv .venv
 source .venv/bin/activate   # On Linux/MacOS
@@ -111,7 +104,7 @@ streamlit run app/app.py
 This project was developed by the following contributors:  
 - [Yael Parra](https://www.linkedin.com/in/yael-parra/)  
 - [Orlando Alcalá](https://www.linkedin.com/in/orlando-david-71417411b/)   
-- [Noheli Salazar](https://www.linkedin.com/in/nhoeli-salazar/)   
+- [Nhoeli Salazar](https://www.linkedin.com/in/nhoeli-salazar/)   
 - [Fernando García](https://www.linkedin.com/in/fernandogarciacatalan/)  
 
 If you have suggestions or feedback, feel free to contact us!
