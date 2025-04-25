@@ -6,6 +6,7 @@ from sklearn.neighbors import KNeighborsRegressor
 import numpy as np
 import pandas as pd
 import os
+# from pipeline import create_pipeline
 
 # Setting paths
 current_dir = os.getcwd()  # Use os.getcwd() to get the current working directory
@@ -20,7 +21,6 @@ test_csv_path = os.path.join(data_dir, "test_csv.csv")
 df = pd.read_csv(clean_data_car_csv_path)
 df = df.dropna()
 
-
 ##  dividir datos en conjuntos de entrenamiento y prueba.
 def split_data(df, features, target, test_size=0.2, random_state=42):
     X_train, X_test, y_train, y_test = train_test_split(
@@ -30,8 +30,6 @@ def split_data(df, features, target, test_size=0.2, random_state=42):
         random_state=random_state
     )
     return X_train, X_test, y_train, y_test
-
-
 
 # Valoración del modelo y detección de overfitting
 # Asegúrate de que tienes instaladas las librerías necesarias
@@ -46,12 +44,18 @@ except ImportError:
 
 
 # Variables predictoras y objetivo
-features = ['model_year', 'milage',]# 'engine','transmission_num','accident']
+features = ['model_year', 'milage', 'engine_hp'] ##'transmission_num','accident']
 X = df[features]
 y = df['price']
 
-# División del dataset 
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+X_train = pd.read_csv(train_csv_path)
+X_test = pd.read_csv(test_csv_path)
+
+y_train = X_train.pop('price')
+y_test = X_test.pop('price')
+
+print(X_train.head())
+print(X_test.head())
 
 # Lista de modelos 
 models = {
