@@ -60,8 +60,10 @@ The main goal was to apply exploratory data analysis (EDA) techniques and build 
 ├── 📜 .gitignore  
 ├── 📜 requirements.txt  
 ├── 📜 README.md  
+```
+---
 
-🧪 Technologies Used & Dependencies
+## Technologies Used & Dependencies
 
 <img width="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/python.png">&nbsp;
 <img width="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/pandas.png">&nbsp;
@@ -77,12 +79,13 @@ The main goal was to apply exploratory data analysis (EDA) techniques and build 
 
 ## ⚙️ Installation and Usage
 
-1️⃣ Clone the repository
+### 1️⃣ Clone the repository
 ```bash
 git clone [https://github.com/Nho89/Car_prices_project_equipo2.git](https://github.com/Nho89/Car_prices_project_equipo2.git)
 cd Car_prices_project_equipo2
+```
 
-2️⃣ Create and activate the virtual environment
+### 2️⃣ Create and activate the virtual environment
 ```bash
 python -m venv .venv
 source .venv/bin/activate   # On Linux/MacOS
@@ -111,7 +114,7 @@ streamlit run app/app.py
 This project was developed by the following contributors:  
 - [Yael Parra](https://www.linkedin.com/in/yael-parra/)  
 - [Orlando Alcalá](https://www.linkedin.com/in/orlando-david-71417411b/)   
-- [Noheli Salazar](https://www.linkedin.com/in/nhoeli-salazar/)   
+- [Nhoeli Salazar](https://www.linkedin.com/in/nhoeli-salazar/)   
 - [Fernando García](https://www.linkedin.com/in/fernandogarciacatalan/)  
 
 If you have suggestions or feedback, feel free to contact us!
