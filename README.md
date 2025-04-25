@@ -6,7 +6,7 @@
 -  [Current Issues](#-current-issues)
 -  [Folder Structure](#-folder-structure)
 -  [Possible Improvements](#-possible-improvements)   
--  [Technologies Used & Dependencies](#-technologies-used--dependencies)   
+-  [Eda Architecture Diagram](#-Eda-Architecture-Diagram)   
 -  [Installation and Usage](#-installation-and-usage)   
 -  [Collaborators](#-collaborators)   
 
@@ -66,20 +66,6 @@ The main goal was to apply exploratory data analysis (EDA) techniques and build 
 ## Eda Architecture Diagram
 
 ![screenshot-1745574334085](https://github.com/user-attachments/assets/1e4f7f4c-4836-4952-b8e0-34653a8b3e4c)
-
-## Technologies Used & Dependencies
-
-<img width="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/python.png">&nbsp;
-<img width="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/pandas.png">&nbsp;
-<img width="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/numpy.png">&nbsp;
-<img width="50" src="ttps://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/git.png">&nbsp;
-<img width="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/visual_studio_code.png">&nbsp;
-<img width="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/jupyter_notebook.png">&nbsp;
-<img width="50" src="">&nbsp;
-<img width="50" src="">&nbsp;
-<img width="50" src="">&nbsp;
-<img width="50" src="">&nbsp;
----
 
 ## ⚙️ Installation and Usage
 
