@@ -33,7 +33,7 @@ The main goal was to apply exploratory data analysis (EDA) techniques and build 
 
 ##  🔍 Main Features  
 ✅ Complete EDA with visualizations to understand variable relationships.  
-✅ Trained regression model to predict used car prices.  
+✅ Trained  Gradient Boosting model to predict used car prices.  
 ✅ Streamlit visual interface for predictions.  
 ✅ Well-structured project by functionality.  
 
@@ -47,7 +47,7 @@ The main goal was to apply exploratory data analysis (EDA) techniques and build 
 ##  💡 Possible Improvements  
 ✅ Add and compare new models (XGBoost, CatBoost, etc.).  
 ✅ Implement more robust cross-validation.  
-✅ Improve the UI and navigation in the Streamlit app.  
+✅ Implement the database.  
 
 ---
 
@@ -63,7 +63,13 @@ The main goal was to apply exploratory data analysis (EDA) techniques and build 
 │   └── clean_data_car.csv 
 │   └── train.csv                
 ├── 📂 eda/                   
-│   └── eda_car_prices.ipynb  
+│   └── eda.ipynb
+├── 📂 models/
+│   └── car_price_model.py
+│   └── model_testing.py
+│   └── car_price_gb_pkl
+│   └── brand_encoder.pkl
+│   └── model_encoder.pkl
 ├── 📜 .gitignore  
 ├── 📜 requirements.txt  
 ├── 📜 README.md  
