@@ -13,7 +13,7 @@
 -  [Eda Architecture Diagram](#-Eda-Architecture-Diagram)   
 -  [Installation and Usage](#-installation-and-usage)   
 -  [Collaborators](#-collaborators)   
-
+-  [Deployment](#-deployment)
 ---
 
 ##  🚗 About the Project  
@@ -111,7 +111,9 @@ jupyter notebook eda/eda.ipynb
 ```bash
 streamlit run app/app.py
 ```
+### Deployment
 
+- The model can be tested on render, with the following link: [Proyecto Equipo 2](https://car-prices-project-equipo2.onrender.com)
 
 ### 🧑‍💻 Collaborators
 This project was developed by the following contributors:  
