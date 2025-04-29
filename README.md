@@ -11,9 +11,9 @@
 -  [Folder Structure](#-folder-structure)
 -  [Possible Improvements](#-possible-improvements)   
 -  [Eda Architecture Diagram](#-Eda-Architecture-Diagram)   
--  [Installation and Usage](#-installation-and-usage)   
+-  [Installation and Usage](#-installation-and-usage)
+-  [Deployment](#-deployment)  
 -  [Collaborators](#-collaborators)   
--  [Deployment](#-deployment)
 ---
 
 ##  🚗 About the Project  
